@@ -9,11 +9,12 @@ import subprocess
 dirs = [
     # './cases',
     # 'custom_test',
-    'test_codes',
+    # 'test_codes',
     # 'sysyruntimelibrary/section1/functional_test',
     # 'sysyruntimelibrary/section1/performance_test',
     # 'sysyruntimelibrary/section2/functional_test',
     # 'sysyruntimelibrary/section2/performance_test',
+    'lava_test',
 ]
 
 # init compiler config
@@ -123,6 +124,12 @@ def run_ir_case(sy_file, in_file, out_file):
     # compare to reference
     with open(out_file) as f:
         ref = f.read().strip()
+
+    with open("1", "w") as f:
+        f.write(out)
+    with open("2", "w") as f:
+        f.write(ref)
+        
     return out == ref
 
 # run asm test case
@@ -153,6 +160,12 @@ def run_asm_case(sy_file, in_file, out_file):
     # compare to reference
     with open(out_file) as f:
         ref = f.read().strip()
+
+    with open("1", "w") as f:
+        f.write(out)
+    with open("2", "w") as f:
+        f.write(ref)
+
     return out == ref
 
 
