@@ -9,12 +9,12 @@ import subprocess
 dirs = [
     # './cases',
     # 'custom_test',
-    # 'test_codes',
+    'test_codes',
     # 'sysyruntimelibrary/section1/functional_test',
     # 'sysyruntimelibrary/section1/performance_test',
     # 'sysyruntimelibrary/section2/functional_test',
     # 'sysyruntimelibrary/section2/performance_test',
-    'lava_test',
+    # 'lava_test',
 ]
 
 # init compiler config
@@ -56,6 +56,8 @@ def GetLacc(path):
         cmd = "cp " + path + " ./"
         os.system(cmd)
 
+    global lacc
+    lacc = path
 
 def CompileLibIR():
     cmd = "clang -emit-llvm -S " + sylib
@@ -135,7 +137,8 @@ def run_ir_case(sy_file, in_file, out_file):
 # run asm test case
 def run_asm_case(sy_file, in_file, out_file):
     # compile to executable
-    lacc_cmd = lacc.split(' ') + ["-S", "-o", asm, sy_file]
+    lacc_cmd = lacc.split(' ') + ["-S", "-o", asm, sy_file, "-O2"]
+    # print(lacc_cmd)
     result = subprocess.run(lacc_cmd, stdout=subprocess.PIPE)
 
     if result.returncode:
