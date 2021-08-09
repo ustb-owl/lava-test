@@ -7,14 +7,14 @@ import subprocess
 
 # directories that storing test cases
 dirs = [
-    # './cases',
-    'custom_test',
+    './cases',
+    # 'custom_test',
     # 'test_codes',
-    # 'sysyruntimelibrary/section1/functional_test',
-    # 'sysyruntimelibrary/section1/performance_test',
-    # 'sysyruntimelibrary/section2/functional_test',
-    # 'sysyruntimelibrary/section2/performance_test',
-    # 'lava_test',
+    'sysyruntimelibrary/section1/functional_test',
+    'sysyruntimelibrary/section1/performance_test',
+    'sysyruntimelibrary/section2/functional_test',
+    'sysyruntimelibrary/section2/performance_test',
+    'lava_test',
 ]
 
 # init compiler config
@@ -91,7 +91,7 @@ def get_case(sy_file):
 # run single test case
 def run_ir_case(sy_file, in_file, out_file):
     # compile to executable
-    lacc_cmd = lacc.split(' ') + ["-I", "-o", ir, sy_file]
+    lacc_cmd = lacc.split(' ') + ["-I", "-o", ir, sy_file, "-O2"]
     result = subprocess.run(lacc_cmd, stdout=subprocess.PIPE)
 
     if result.returncode:

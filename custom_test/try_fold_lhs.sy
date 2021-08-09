@@ -75,4 +75,5 @@ int main() {
   putint(g7()); putch(10);
   putint(g8()); putch(10);
   putint(g9()); putch(10);
+  return 0;
 }

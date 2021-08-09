@@ -14,8 +14,6 @@ int main() {
         i = i + 1;
     }
 
-    starttime();
-
     int k = 0;
     while (k < n) {
         i = 0;
@@ -33,7 +31,6 @@ int main() {
     }
 
 
-    stoptime();
     i = 0;
     while (i < n) {
         j = 0;
