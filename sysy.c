@@ -34,6 +34,7 @@ void putarray(int n, int a[]) {
   for (int i = 0; i < n; ++i) {
     printf(" %d", a[i]);
   }
+  printf("%s", "\n");
 }
 
 // do nothing

@@ -14,7 +14,7 @@ dirs = [
     'sysyruntimelibrary/section1/performance_test',
     'sysyruntimelibrary/section2/functional_test',
     'sysyruntimelibrary/section2/performance_test',
-    'lava_test',
+    # 'lava_test',
 ]
 
 # init compiler config

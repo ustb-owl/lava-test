@@ -7,6 +7,8 @@ target triple = "x86_64-pc-linux-gnu"
 @.str.1 = private unnamed_addr constant [3 x i8] c"%c\00", align 1
 @.str.2 = private unnamed_addr constant [4 x i8] c"%d:\00", align 1
 @.str.3 = private unnamed_addr constant [4 x i8] c" %d\00", align 1
+@.str.4 = private unnamed_addr constant [3 x i8] c"%s\00", align 1
+@.str.5 = private unnamed_addr constant [2 x i8] c"\0A\00", align 1
 
 ; Function Attrs: noinline nounwind optnone uwtable
 define dso_local i32 @getint() #0 {
@@ -118,6 +120,7 @@ define dso_local void @putarray(i32 %0, i32* %1) #0 {
   br label %8
 
 22:                                               ; preds = %8
+  %23 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.str.4, i64 0, i64 0), i8* getelementptr inbounds ([2 x i8], [2 x i8]* @.str.5, i64 0, i64 0))
   ret void
 }
 
