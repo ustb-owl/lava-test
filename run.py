@@ -7,13 +7,14 @@ import subprocess
 
 # directories that storing test cases
 dirs = [
-    './cases',
-    # 'custom_test',
-    # 'test_codes',
-    'sysyruntimelibrary/section1/functional_test',
-    'sysyruntimelibrary/section1/performance_test',
-    'sysyruntimelibrary/section2/functional_test',
-    'sysyruntimelibrary/section2/performance_test',
+    # './cases',
+    'custom_test',
+    'test_codes',
+    # 'sysyruntimelibrary/section1/functional_test',
+    # 'sysyruntimelibrary/section1/performance_test',
+    # 'sysyruntimelibrary/section2/functional_test',
+    # 'sysyruntimelibrary/section2/performance_test',
+    # 'performance_test2021',
     # 'lava_test',
 ]
 
