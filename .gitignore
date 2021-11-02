@@ -3,3 +3,8 @@
 temp
 lacc
 .gdb_history
+*.ll
+*.s
+*.out
+1*
+2*
