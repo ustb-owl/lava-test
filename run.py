@@ -7,13 +7,13 @@ import subprocess
 
 # directories that storing test cases
 dirs = [
-    # './cases',
+    './cases',
     # 'custom_test',
     # 'test_codes',
-    # 'sysyruntimelibrary/section1/functional_test',
-    # 'sysyruntimelibrary/section1/performance_test',
-    # 'sysyruntimelibrary/section2/functional_test',
-    # 'sysyruntimelibrary/section2/performance_test',
+    'sysyruntimelibrary/section1/functional_test',
+    'sysyruntimelibrary/section1/performance_test',
+    'sysyruntimelibrary/section2/functional_test',
+    'sysyruntimelibrary/section2/performance_test',
     'performance_test2021',
     # 'lava_test',
 ]
@@ -61,7 +61,7 @@ def GetLacc(path):
     lacc = path
 
 def CompileLibIR():
-    cmd = "clang -emit-llvm -S " + sylib
+    cmd = "clang -Xclang -no-opaque-pointers -emit-llvm -S " + sylib
     os.system(cmd)
 
 
@@ -265,7 +265,7 @@ if __name__ == '__main__':
         # check if input test cast is valid
         if not args.input.endswith('.sy'):
             eprint('input must be a SysY source file')
-            exit(1)
+            #  exit(1)
         if not os.path.exists(args.input):
             eprint(f'file "{args.input}" does not exist')
             exit(1)
